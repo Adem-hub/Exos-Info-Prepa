@@ -23,6 +23,7 @@ let rec puissance_3 a n = match n with
 |k when k mod 7 =0-> let x= puissance a (n/7) in x*x*x*x*x
 |_-> (puissance_3 a (n-1)) *a;;
 
-let rec knuth n a b = match b with
-|0->1
+let rec knuth n a b = match n,b with
+|k,0->1
+|k,b when k=1 -> puissance a b
 |_-> knuth (n-1) a (knuth n a (b-1));;
