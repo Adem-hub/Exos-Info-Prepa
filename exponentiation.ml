@@ -25,5 +25,5 @@ let rec puissance_3 a n = match n with
 
 let rec knuth n a b = match n,b with
 |k,0->1
-|k,b when k=1 -> puissance_3 a b
+|1,b-> puissance_3 a b
 |_-> knuth (n-1) a (knuth n a (b-1));;
